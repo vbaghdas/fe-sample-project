@@ -38,16 +38,16 @@ class Cart extends Component {
         return (
             <React.Fragment>
                 <div className="row cart-body">
-                    <div className="col-md-12 cart-empty">
+                    <div className="col-xs-12 col-md-12 cart-empty">
                         <h3>Nothing in your cart, start shopping.</h3>
                     </div>
                 </div>
-                <div className="col-md-12 cart-footer">
+                <div className="col-xs-12 col-md-12 cart-footer">
                     <hr className="cart-divider"/>
-                    <div className="col-md-6 text-left cart-total">
+                    <div className="col-xs-6 col-md-6 text-left cart-total">
                         <h3>Total</h3>
                     </div>
-                    <div className="col-md-6 text-right cart-amount">
+                    <div className="col-xs-6 col-md-6 text-right cart-amount">
                         <h3>$0</h3>
                     </div>
                 </div>

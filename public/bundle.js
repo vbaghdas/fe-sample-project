@@ -2482,7 +2482,7 @@ var Cart = function (_Component) {
                     { className: 'row cart-body' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-12 cart-empty' },
+                        { className: 'col-xs-12 col-md-12 cart-empty' },
                         _react2.default.createElement(
                             'h3',
                             null,
@@ -2492,11 +2492,11 @@ var Cart = function (_Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'col-md-12 cart-footer' },
+                    { className: 'col-xs-12 col-md-12 cart-footer' },
                     _react2.default.createElement('hr', { className: 'cart-divider' }),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-6 text-left cart-total' },
+                        { className: 'col-xs-6 col-md-6 text-left cart-total' },
                         _react2.default.createElement(
                             'h3',
                             null,
@@ -2505,7 +2505,7 @@ var Cart = function (_Component) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-6 text-right cart-amount' },
+                        { className: 'col-xs-6 col-md-6 text-right cart-amount' },
                         _react2.default.createElement(
                             'h3',
                             null,
@@ -24297,155 +24297,24 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(6);
 
-var _itemsReducers = __webpack_require__(112);
+var _items_reducers = __webpack_require__(205);
 
-var _cartReducers = __webpack_require__(114);
+var _cart_reducers = __webpack_require__(204);
 
 exports.default = (0, _redux.combineReducers)({
-    items: _itemsReducers.itemsReducers,
-    cart: _cartReducers.cartReducers
+    items: _items_reducers.itemsReducers,
+    cart: _cart_reducers.cartReducers
 });
 
 /***/ }),
-/* 112 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-exports.itemsReducers = itemsReducers;
-
-var _productPayload = __webpack_require__(113);
-
-var _productPayload2 = _interopRequireDefault(_productPayload);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function itemsReducers() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _extends({}, _productPayload2.default);
-    var action = arguments[1];
-
-    switch (action.type) {
-        case "GET_ITEMS":
-            return _extends({}, state, { items: [].concat(_toConsumableArray(state.items)) });
-
-        case "POST_ITEM":
-            return { items: [].concat(_toConsumableArray(state.items), _toConsumableArray(action.payload)) };
-            break;
-
-        case "DELETE_ITEM":
-            var currentItemToDelete = [].concat(_toConsumableArray(state.items));
-            var indexToDelete = currentItemToDelete.findIndex(function (item) {
-                return item._id === action.payload._id;
-            });
-            return { items: [].concat(_toConsumableArray(currentItemToDelete.slice(0, indexToDelete)), _toConsumableArray(currentItemToDelete.slice(indexToDelete + 1))) };
-            break;
-
-        case "UPDATE_ITEM":
-            var currentItemToUpdate = [].concat(_toConsumableArray(state.items));
-            var indexToUpdate = currentItemToUpdate.findIndex(function (item) {
-                return item._id === action.payload._id;
-            });
-            var newItemToUpdate = _extends({}, currentItemToUpdate[indexToUpdate], {
-                title: action.payload.title
-            });
-
-            console.log("what is it newitemToUpdate", newItemToUpdate);
-            return { items: [].concat(_toConsumableArray(currentItemToUpdate.slice(0, indexToUpdate)), [newItemToUpdate], _toConsumableArray(currentItemToUpdate.slice(indexToUpdate + 1))) };
-            break;
-    }
-    return state;
-}
-
-/***/ }),
+/* 112 */,
 /* 113 */
 /***/ (function(module, exports) {
 
 module.exports = {"items":[{"_id":1,"filename":"images/618328744.png","price":51.27,"name":"Mens Fashion Shirts"},{"_id":2,"filename":"images/618842634.png","price":57.04,"name":"Casual Jacket"},{"_id":3,"filename":"images/619521178.png","price":3.97,"name":"Mens Work Shirt"},{"_id":4,"filename":"images/623270836.png","price":32.37,"name":"Running Shoes"},{"_id":5,"filename":"images/638571516.png","price":57.74,"name":"Leather Jacket"},{"_id":6,"filename":"images/649597850.png","price":87.45,"name":"Snow Boots"},{"_id":7,"filename":"images/656678076.png","price":90.12,"name":"Mens Fashion Shirts"},{"_id":8,"filename":"images/666666252.png","price":88.83,"name":"Womens White Sweater"},{"_id":9,"filename":"images/666666466.png","price":77.67,"name":"Womens Red Jacket"},{"_id":10,"filename":"images/675606742.png","price":70.57,"name":"Pastel Everyday Wear"},{"_id":11,"filename":"images/806813490.png","price":22.46,"name":"Longsleeve Workout Shirt"}]}
 
 /***/ }),
-/* 114 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-exports.cartReducers = cartReducers;
-exports.totals = totals;
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function cartReducers() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { cart: [] };
-    var action = arguments[1];
-
-    switch (action.type) {
-        case "ADD_TO_CART":
-            return _extends({}, state, {
-                cart: action.payload,
-                totalAmount: totals(action.payload).amount,
-                totalQty: totals(action.payload).qty
-            });
-            break;
-
-        case "UPDATE_CART":
-            var currentItemToUpdate = [].concat(_toConsumableArray(state.cart));
-            var indexToUpdate = currentItemToUpdate.findIndex(function (item) {
-                return item._id === action._id;
-            });
-            var newItemToUpdate = _extends({}, currentItemToUpdate[indexToUpdate], {
-                quantity: currentItemToUpdate[indexToUpdate].quantity + action.unit
-            });
-            var cartUpdate = [].concat(_toConsumableArray(currentItemToUpdate.slice(0, indexToUpdate)), [newItemToUpdate], _toConsumableArray(currentItemToUpdate.slice(indexToUpdate + 1)));
-            return _extends({}, state, {
-                cart: cartUpdate,
-                totalAmount: totals(cartUpdate).amount,
-                totalQty: totals(cartUpdate).qty
-            });
-            break;
-
-        case "DELETE_CART_ITEM":
-            return _extends({}, state, {
-                cart: action.payload,
-                totalAmount: totals(action.payload).amount,
-                totalQty: totals(action.payload).qty
-            });
-            break;
-    }
-    return state;
-}
-
-function totals(payloadArr) {
-    var totalAmount = payloadArr.map(function (cartArr) {
-        return cartArr.price * cartArr.quantity;
-    }).reduce(function (a, b) {
-        return a + b;
-    }, 0);
-
-    var totalQty = payloadArr.map(function (qty) {
-        return qty.quantity;
-    }).reduce(function (a, b) {
-        return a + b;
-    }, 0);
-
-    return { amount: totalAmount.toFixed(2), qty: totalQty };
-}
-
-/***/ }),
+/* 114 */,
 /* 115 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -33730,6 +33599,139 @@ exports.default = {
     transition: 'opacity 500ms cubic-bezier(0.23, 1, 0.32, 1)'
   }
 };
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.cartReducers = cartReducers;
+exports.totals = totals;
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function cartReducers() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { cart: [] };
+    var action = arguments[1];
+
+    switch (action.type) {
+        case "ADD_TO_CART":
+            return _extends({}, state, {
+                cart: action.payload,
+                totalAmount: totals(action.payload).amount,
+                totalQty: totals(action.payload).qty
+            });
+            break;
+
+        case "UPDATE_CART":
+            var currentItemToUpdate = [].concat(_toConsumableArray(state.cart));
+            var indexToUpdate = currentItemToUpdate.findIndex(function (item) {
+                return item._id === action._id;
+            });
+            var newItemToUpdate = _extends({}, currentItemToUpdate[indexToUpdate], {
+                quantity: currentItemToUpdate[indexToUpdate].quantity + action.unit
+            });
+            var cartUpdate = [].concat(_toConsumableArray(currentItemToUpdate.slice(0, indexToUpdate)), [newItemToUpdate], _toConsumableArray(currentItemToUpdate.slice(indexToUpdate + 1)));
+            return _extends({}, state, {
+                cart: cartUpdate,
+                totalAmount: totals(cartUpdate).amount,
+                totalQty: totals(cartUpdate).qty
+            });
+            break;
+
+        case "DELETE_CART_ITEM":
+            return _extends({}, state, {
+                cart: action.payload,
+                totalAmount: totals(action.payload).amount,
+                totalQty: totals(action.payload).qty
+            });
+            break;
+    }
+    return state;
+}
+
+function totals(payloadArr) {
+    var totalAmount = payloadArr.map(function (cartArr) {
+        return cartArr.price * cartArr.quantity;
+    }).reduce(function (a, b) {
+        return a + b;
+    }, 0);
+
+    var totalQty = payloadArr.map(function (qty) {
+        return qty.quantity;
+    }).reduce(function (a, b) {
+        return a + b;
+    }, 0);
+
+    return { amount: totalAmount.toFixed(2), qty: totalQty };
+}
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.itemsReducers = itemsReducers;
+
+var _productPayload = __webpack_require__(113);
+
+var _productPayload2 = _interopRequireDefault(_productPayload);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function itemsReducers() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _extends({}, _productPayload2.default);
+    var action = arguments[1];
+
+    switch (action.type) {
+        case "GET_ITEMS":
+            return _extends({}, state, { items: [].concat(_toConsumableArray(state.items)) });
+
+        case "POST_ITEM":
+            return { items: [].concat(_toConsumableArray(state.items), _toConsumableArray(action.payload)) };
+            break;
+
+        case "DELETE_ITEM":
+            var currentItemToDelete = [].concat(_toConsumableArray(state.items));
+            var indexToDelete = currentItemToDelete.findIndex(function (item) {
+                return item._id === action.payload._id;
+            });
+            return { items: [].concat(_toConsumableArray(currentItemToDelete.slice(0, indexToDelete)), _toConsumableArray(currentItemToDelete.slice(indexToDelete + 1))) };
+            break;
+
+        case "UPDATE_ITEM":
+            var currentItemToUpdate = [].concat(_toConsumableArray(state.items));
+            var indexToUpdate = currentItemToUpdate.findIndex(function (item) {
+                return item._id === action.payload._id;
+            });
+            var newItemToUpdate = _extends({}, currentItemToUpdate[indexToUpdate], {
+                title: action.payload.title
+            });
+
+            console.log("what is it newitemToUpdate", newItemToUpdate);
+            return { items: [].concat(_toConsumableArray(currentItemToUpdate.slice(0, indexToUpdate)), [newItemToUpdate], _toConsumableArray(currentItemToUpdate.slice(indexToUpdate + 1))) };
+            break;
+    }
+    return state;
+}
 
 /***/ })
 /******/ ]);
