@@ -2,67 +2,67 @@
   "items": [
     {
       "_id": 1,
-      "filename": "618328744.png",
+      "filename": "images/618328744.png",
       "price": 51.27,
       "name": "Mens Fashion Shirts"
     },
     {
       "_id": 2,
-      "filename": "618842634.png",
+      "filename": "images/618842634.png",
       "price": 57.04,
       "name": "Casual Jacket"
     },
     {
       "_id": 3,
-      "filename": "619521178.png",
+      "filename": "images/619521178.png",
       "price": 3.97,
       "name": "Mens Work Shirt"
     },
     {
       "_id": 4,
-      "filename": "623270836.png",
+      "filename": "images/623270836.png",
       "price": 32.37,
       "name": "Running Shoes"
     },
     {
       "_id": 5,
-      "filename": "638571516.png",
+      "filename": "images/638571516.png",
       "price": 57.74,
       "name": "Leather Jacket"
     },
     {
       "_id": 6,
-      "filename": "649597850.png",
+      "filename": "images/649597850.png",
       "price": 87.45,
       "name": "Snow Boots"
     },
     {
       "_id": 7,
-      "filename": "656678076.png",
+      "filename": "images/656678076.png",
       "price": 90.12,
       "name": "Mens Fashion Shirts"
     },
     {
       "_id": 8,
-      "filename": "666666252.png",
+      "filename": "images/666666252.png",
       "price": 88.83,
       "name": "Womens White Sweater"
     },
     {
       "_id": 9,
-      "filename": "666666466.png",
+      "filename": "images/666666466.png",
       "price": 77.67,
       "name": "Womens Red Jacket"
     },
     {
       "_id": 10,
-      "filename": "675606742.png",
+      "filename": "images/675606742.png",
       "price": 70.57,
       "name": "Pastel Everyday Wear"
     },
     {
       "_id": 11,
-      "filename": "806813490.png",
+      "filename": "images/806813490.png",
       "price": 22.46,
       "name": "Longsleeve Workout Shirt"
     }

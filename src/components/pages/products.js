@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {addToCart, updateCart} from '../../actions/cartActions';
 
-class ItemProduct extends Component {
+class Products extends Component {
     handleCart() {
         const {_id, filename, name, price, cart} = this.props;
         const item = [...cart, {
@@ -33,7 +33,7 @@ class ItemProduct extends Component {
     render() {
         return (
             <React.Fragment>
-                <img className="img-responsive" src={'images/' + this.props.filename}/>
+                <img className="img-responsive" src={this.props.filename}/>
                 <h4>{this.props.name}</h4>
                 <h3>$ {this.props.price}</h3>
                 <button onClick={this.handleCart.bind(this)} className="btn btn-outline-primary">Add to cart</button>
@@ -55,4 +55,4 @@ function mapDispatchToProps(dispatch) {
     }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(Products);

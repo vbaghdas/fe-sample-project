@@ -3,26 +3,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {deleteCartItem, updateCart} from '../../actions/cartActions';
-import { Modal, Button } from 'react-bootstrap';
 
 class Cart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showModal: false
-        };
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-    }
-
-    handleClose() {
-        this.setState({ showModal: false });
-    }
-
-    handleShow() {
-        this.setState({ showModal: true });
-    }
-
     onDelete(_id) {
         const currentItemToDelete = this.props.cart;
         const indexToDelete = currentItemToDelete.findIndex(
@@ -53,39 +35,63 @@ class Cart extends Component {
     }
 
     renderEmpty() {
-        return (<div></div>)
+        return (
+            <React.Fragment>
+                <div className="row cart-body">
+                    <div className="col-md-12 cart-empty">
+                        <h3>Nothing in your cart, start shopping.</h3>
+                    </div>
+                </div>
+                <div className="col-md-12 cart-footer">
+                    <hr className="cart-divider"/>
+                    <div className="col-md-6 text-left cart-total">
+                        <h3>Total</h3>
+                    </div>
+                    <div className="col-md-6 text-right cart-amount">
+                        <h3>$0</h3>
+                    </div>
+                </div>
+            </React.Fragment>
+
+        )
     }
 
     renderCart() {
         const cartItemsList = this.props.cart.map( (cartArr) => {
             return (
-                <div key={cartArr._id}>
-                    <img src={'images/' + cartArr.filename}/>
-                    <div>{cartArr.name}</div>
-                    <p>$ {cartArr.price}</p>
-                    <p>qty {cartArr.quantity}</p>
-                    <button type="button" className="btn btn-default" onClick={this.onIncrement.bind(this, cartArr._id, cartArr.quantity)}>+</button>
-                    <button type="button" className="btn btn-default" onClick={this.onDecrement.bind(this, cartArr._id, cartArr.quantity)}>-</button>
-                    <button type="button" className="btn btn-danger" onClick={this.onDelete.bind(this, cartArr._id)}>DELETE</button>
+                <div className="row cart-body-row" key={cartArr._id}>
+                    <div className="col-xs-4 col-md-4 product-image">
+                        <div className="product-image-wrap" style={{ backgroundImage: `url( ${cartArr.filename})` }}></div>
+                    </div>
+                    <div className="col-xs-7 col-md-7 text-right product-title">
+                        <p>{cartArr.name}</p>
+                        <p>$ {cartArr.price}</p>
+                        <p>qty {cartArr.quantity}</p>
+                        <span onClick={this.onIncrement.bind(this, cartArr._id, cartArr.quantity)}><i className="fas fa-plus-square"></i></span>
+                        <span onClick={this.onDecrement.bind(this, cartArr._id, cartArr.quantity)}><i className="fas fa-minus-square"></i></span>
+                    </div>
+                    <div className="col-xs-1 col-md-1 product-delete">
+                        <span onClick={this.onDelete.bind(this, cartArr._id)}><i className="fa fa-times-circle"></i></span>
+                    </div>
                 </div>
             )
         }, this)
 
         return (
-            <div>
-                <Modal show={this.state.showModal} onHide={this.handleClose}>
-                    <Modal.Header>
-                        <Modal.Title>Your Cart</Modal.Title>
-                    </Modal.Header>
-
-                    <Modal.Body>{cartItemsList}</Modal.Body>
-
-                    <Modal.Footer>
-                        <p>total {this.props.totalAmount}</p>
-                        <Button onClick={this.handleClose}>Back</Button>
-                    </Modal.Footer>
-                </Modal>
-            </div>
+            <React.Fragment>
+                <div className="col-xs-12 col-md-12 cart-body">
+                    {cartItemsList}
+                </div>
+                <div className="col-xs-12 col-md-12 cart-footer">
+                    <hr className="cart-divider"/>
+                    <div className="col-xs-6 col-md-6 text-left cart-total">
+                        <h3>Total</h3>
+                    </div>
+                    <div className="col-xs-6 col-md-6 text-right cart-amount">
+                        <h3>$ {this.props.totalAmount}</h3>
+                    </div>
+                </div>
+            </React.Fragment>
         )
     }
 }

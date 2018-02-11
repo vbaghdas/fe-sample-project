@@ -10,13 +10,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const middleware = applyMiddleware(logger);
 const store = createStore(reducers, middleware);
 
-import Index from './components/pages';
+import Main from './components/pages/main';
 
 render(
     <Provider store={store}>
         <Router>
             <React.Fragment>
-                <Index />
+                <Main />
             </React.Fragment>
         </Router>
     </Provider>,
