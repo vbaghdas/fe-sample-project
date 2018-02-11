@@ -16,7 +16,7 @@ class ProductsList extends Component {
         let rowContents = [];
 		const contents = this.props.items.reduce((acc, p, i) => {
             rowContents.push(
-                <div key={p._id} className="col-md-3 product-wrap">
+                <div key={p._id} className="col-md-3 row product-wrap">
                     <div className="col-xs-12 col-md-12 text-center product-container">
                         <Products
                             _id  = {p._id}

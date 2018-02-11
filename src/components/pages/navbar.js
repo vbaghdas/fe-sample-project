@@ -6,12 +6,19 @@ import Modal from 'react-responsive-modal';
 import Cart from './cart';
 
 class Navbar extends Component {
-    // componentWillUpdate() {
-    //     if(this.state.open == true){
-    //         var bgBlur = document.getElementById('app');
-    //         bgBlur.style.filter = "blur(10px)";
-    //     }
-    // }
+    componentDidUpdate() {
+        if(this.state.open == true){
+            var bgBlur = document.getElementById('main');
+            bgBlur.style.filter = "blur(10px)";
+        }
+    }
+
+    componentWillUpdate() {
+        if(this.state.open == true){
+            var bgBlur = document.getElementById('main');
+            bgBlur.style.filter = "blur(0)";
+        }
+    }
 
     state = {
         open: false,

@@ -66,9 +66,9 @@ class Cart extends Component {
                     <div className="col-xs-7 col-md-7 text-right product-title">
                         <p>{cartArr.name}</p>
                         <p>$ {cartArr.price}</p>
-                        <p>qty {cartArr.quantity}</p>
                         <span onClick={this.onIncrement.bind(this, cartArr._id, cartArr.quantity)}><i className="fas fa-plus-square"></i></span>
                         <span onClick={this.onDecrement.bind(this, cartArr._id, cartArr.quantity)}><i className="fas fa-minus-square"></i></span>
+                        <span>qty: {cartArr.quantity}</span>
                     </div>
                     <div className="col-xs-1 col-md-1 product-delete">
                         <span onClick={this.onDelete.bind(this, cartArr._id)}><i className="fa fa-times-circle"></i></span>
