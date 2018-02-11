@@ -27503,35 +27503,37 @@ var ProductsList = function (_Component) {
         key: 'render',
         value: function render() {
             var rowContents = [];
-            var contents = this.props.items.reduce(function (acc, p, i) {
+            var contents = this.props.items.reduce(function (total, currentValue, i) {
                 rowContents.push(_react2.default.createElement(
                     'div',
-                    { key: p._id, className: 'col-md-3 row product-wrap' },
+                    { className: 'col-md-3 row product-wrap', key: i },
                     _react2.default.createElement(
                         'div',
                         { className: 'col-xs-12 col-md-12 text-center product-container' },
                         _react2.default.createElement(_products2.default, {
-                            _id: p._id,
-                            filename: p.filename,
-                            name: p.name,
-                            price: p.price
+                            _id: currentValue._id,
+                            filename: currentValue.filename,
+                            name: currentValue.name,
+                            price: currentValue.price
                         })
                     )
                 ));
 
                 if (i % 4 === 3) {
-                    acc.push(_react2.default.createElement(
+                    total.push(_react2.default.createElement(
                         'div',
-                        { className: 'row product-row' },
+                        { className: 'row product-row', key: i },
                         rowContents
                     ));
                     rowContents = [];
                 }
-                return acc;
+                return total;
             }, []);
+
+            var i = 0;
             contents.push(_react2.default.createElement(
                 'div',
-                { className: 'row product-row' },
+                { className: 'row product-row', key: i++ },
                 rowContents
             ));
 

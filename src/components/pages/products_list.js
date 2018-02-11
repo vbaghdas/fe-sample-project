@@ -14,27 +14,29 @@ class ProductsList extends Component {
 
     render() {
         let rowContents = [];
-		const contents = this.props.items.reduce((acc, p, i) => {
+		const contents = this.props.items.reduce((total, currentValue, i) => {
             rowContents.push(
-                <div key={p._id} className="col-md-3 row product-wrap">
+                <div className="col-md-3 row product-wrap" key={i}>
                     <div className="col-xs-12 col-md-12 text-center product-container">
                         <Products
-                            _id  = {p._id}
-                            filename = {p.filename}
-                            name = {p.name}
-                            price = {p.price}
+                            _id  = {currentValue._id}
+                            filename = {currentValue.filename}
+                            name = {currentValue.name}
+                            price = {currentValue.price}
                         />
                     </div>
                 </div>
             );
         
 			if (i % 4 === 3) {
-				acc.push(<div className="row product-row">{rowContents}</div>);
+				total.push(<div className="row product-row" key={i}>{rowContents}</div>);
 				rowContents = [];
 			}
-			return acc;
-		},[])
-        contents.push(<div className="row product-row">{rowContents}</div>);
+			return total;
+        },[])
+        
+        let i = 0;
+        contents.push(<div className="row product-row" key={i++}>{rowContents}</div>);
 
 		return (
             <section id="main" className="container">
