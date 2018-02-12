@@ -44,8 +44,9 @@ class Navbar extends Component {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span> 
                         </button>
-                        <Link className="navbar-brand" to="/">
-                            <i className="fa fa-shopping-cart"></i>Cart.ly
+                        <Link to="/" className="navbar-brand" onClick={this.onCloseModal}>
+                            <i className="fa fa-shopping-cart"></i>
+                            <span>Cart.ly</span>
                         </Link>
                     </div>
                     <div className="collapse navbar-collapse" id="navbar-list">

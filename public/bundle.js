@@ -29495,9 +29495,13 @@ var Navbar = function (_Component) {
                         ),
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { className: 'navbar-brand', to: '/' },
+                            { to: '/', className: 'navbar-brand', onClick: this.onCloseModal },
                             _react2.default.createElement('i', { className: 'fa fa-shopping-cart' }),
-                            'Cart.ly'
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                'Cart.ly'
+                            )
                         )
                     ),
                     _react2.default.createElement(
