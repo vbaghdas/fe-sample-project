@@ -106,13 +106,13 @@ h3 {
 
 .cart-box {
     border: solid #fff 1px;
-    border-radius: 2px;
+    border-radius: 3px;
     background: white;
     color: #0b00d0;
-    width: 35px;
+    padding: 0px 12px;
     font-size: 16px;
     font-weight: 900;
-    margin: auto;
+    margin-left: 5px;
 }
 
 /*==========================================================
@@ -251,6 +251,10 @@ h3 {
     .product-wrap {
         width: 50%;
         margin: 30px auto;
+    }
+
+    .header {
+        text-align: center;
     }
 }
 

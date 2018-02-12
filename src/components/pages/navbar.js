@@ -55,12 +55,10 @@ class Navbar extends Component {
                             </li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
-                            <li className="cart">
-                                <Link to="/" onClick={this.onOpenModal}>Your Cart</Link>
-                            </li>
                             <li>
-                                <Link to="/">
-                                    <div onClick={this.onOpenModal} className="cart-box">{this.props.totalQty ? this.props.totalQty : 0}</div>
+                                <Link to="/" onClick={this.onOpenModal}>
+                                    <span>Your Cart</span> 
+                                    <span className="cart-box">{this.props.totalQty ? this.props.totalQty : 0}</span>
                                 </Link>
                             </li>
                         </ul>

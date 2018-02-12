@@ -29521,22 +29521,18 @@ var Navbar = function (_Component) {
                             { className: 'nav navbar-nav navbar-right' },
                             _react2.default.createElement(
                                 'li',
-                                { className: 'cart' },
-                                _react2.default.createElement(
-                                    _reactRouterDom.Link,
-                                    { to: '/', onClick: this.onOpenModal },
-                                    'Your Cart'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'li',
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.Link,
-                                    { to: '/' },
+                                    { to: '/', onClick: this.onOpenModal },
                                     _react2.default.createElement(
-                                        'div',
-                                        { onClick: this.onOpenModal, className: 'cart-box' },
+                                        'span',
+                                        null,
+                                        'Your Cart'
+                                    ),
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'cart-box' },
                                         this.props.totalQty ? this.props.totalQty : 0
                                     )
                                 )
