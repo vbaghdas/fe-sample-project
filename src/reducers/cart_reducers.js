@@ -11,25 +11,14 @@ export function cartReducers(state={cart: []}, action) {
             break;
 
         case "UPDATE_CART":
-            const currentItemToUpdate = [...state.cart];
-            const indexToUpdate = currentItemToUpdate.findIndex(
-                (item) => {
-                    return item._id === action._id;
-                }
-            )
-            const newItemToUpdate = {
-                ...currentItemToUpdate[indexToUpdate],
-                quantity: currentItemToUpdate[indexToUpdate].quantity + action.unit
+            return {...state,
+                cart: action.payload,
+                totalAmount: totals(action.payload).amount,
+                totalQty: totals(action.payload).qty
             }
-            let cartUpdate = [...currentItemToUpdate.slice(0, indexToUpdate), newItemToUpdate, ...currentItemToUpdate.slice(indexToUpdate + 1)];
-                return {...state,
-                    cart: cartUpdate,
-                    totalAmount: totals(cartUpdate).amount,
-                    totalQty: totals(cartUpdate).qty
-                }
-                break;
+            break;
 
-        case "DELETE_CART_ITEM":
+        case "DELETE_CART_PRODUCT":
             return {...state, 
                 cart: action.payload,
                 totalAmount: totals(action.payload).amount,

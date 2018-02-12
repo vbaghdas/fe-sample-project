@@ -2,18 +2,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addToCart, updateCart} from '../../actions/cartActions';
+import {addToCart, updateCart} from '../../actions/cart_actions';
 
 class Products extends Component {
     handleCart() {
         const {_id, filename, name, price, cart} = this.props;
-        const item = [...cart, {
+        const product = [...cart, {
             _id,
             filename,
             name,
             price,
             quantity: 1
-
         }]
         if(this.props.cart.length > 0) {
             let _id = this.props._id;
@@ -21,12 +20,12 @@ class Products extends Component {
                 return cart._id === _id;
             })
             if(cartIndex === -1) {
-                this.props.addToCart(item);
+                this.props.addToCart(product);
             } else {
-                this.props.updateCart(_id, 1)
+                this.props.updateCart(_id, 1, this.props.cart)
             }
         } else {
-            this.props.addToCart(item);
+            this.props.addToCart(product);
         }
     }
 

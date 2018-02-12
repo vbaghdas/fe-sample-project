@@ -2,27 +2,31 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {deleteCartItem, updateCart} from '../../actions/cartActions';
+import {deleteCartProduct, updateCart, getCart} from '../../actions/cart_actions';
 
 class Cart extends Component {
+    compondentDidMount() {
+        this.props.getCart();
+    }
+
     onDelete(_id) {
-        const currentItemToDelete = this.props.cart;
-        const indexToDelete = currentItemToDelete.findIndex(
+        const currentProductToDelete = this.props.cart;
+        const indexToDelete = currentProductToDelete.findIndex(
             (cart) => {
                 return cart._id === _id;
             }
         )
-        let cartAfterDelete = [...currentItemToDelete.slice(0, indexToDelete), ...currentItemToDelete.slice(indexToDelete + 1)];
-        this.props.deleteCartItem(cartAfterDelete);
+        let cartAfterDelete = [...currentProductToDelete.slice(0, indexToDelete), ...currentProductToDelete.slice(indexToDelete + 1)];
+        this.props.deleteCartProduct(cartAfterDelete);
     }
 
     onIncrement(_id) {
-        this.props.updateCart(_id, 1)
+        this.props.updateCart(_id, 1, this.props.cart)
     }
 
     onDecrement(_id, quantity) {
         if(quantity > 1) {
-            this.props.updateCart(_id, -1)
+            this.props.updateCart(_id, -1, this.props.cart)
         }
     }
 
@@ -57,7 +61,7 @@ class Cart extends Component {
     }
 
     renderCart() {
-        const cartItemsList = this.props.cart.map( (cartArr) => {
+        const cartProductsList = this.props.cart.map( (cartArr) => {
             return (
                 <div className="row cart-body-row" key={cartArr._id}>
                     <div className="col-xs-4 col-md-4 product-image">
@@ -80,7 +84,7 @@ class Cart extends Component {
         return (
             <React.Fragment>
                 <div className="col-xs-12 col-md-12 cart-body">
-                    {cartItemsList}
+                    {cartProductsList}
                 </div>
                 <div className="col-xs-12 col-md-12 cart-footer">
                     <hr className="cart-divider"/>
@@ -105,8 +109,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        deleteCartItem,
-        updateCart
+        deleteCartProduct,
+        updateCart,
+        getCart
     }, dispatch)
 }
 

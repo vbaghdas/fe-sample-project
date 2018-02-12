@@ -10,5 +10,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log('app is listening on port3000');
+    console.log('Server running hot on port3000');
 })

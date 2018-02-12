@@ -1,6 +1,13 @@
 # SHOPPING CART PROJECT
 
-## Technologies: ReactJS, Redux, JavaScript, HTML5, CSS3, Bootstrap
+## Front End Technologies: ReactJS, Redux, JavaScript, HTML5, CSS3, Bootstrap
+## Back End Technologies: NodeJS, MongoDB, Mongoose, mLab, Express
+
+#### Description
+
+- A Shopping Cart application that allows users to add, delete, and update products from their cart.
+- Utilized Axios calls to get product information from a Mongo database and React/Redux to track the state of the application.
+- Implemented Bootstrap to design and create a clean mobile-first responsive experience.
 
 ### Setup Instructions
 
@@ -12,7 +19,7 @@
 > 4. Install dependencies 
 >    - `npm install`
 > 5. Start dev server
->    - `node server.js`
+>    - `npm start`
 > 6. Open a browser and navigate to `localhost:3000`
 
 ##### DEMO IMAGE: 

@@ -2,19 +2,19 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {getItems} from '../../actions/itemsActions';
+import {getProducts} from '../../actions/products_actions';
 
 import Products from './products';
 import Cart from './cart';
 
 class ProductsList extends Component {
     componentDidMount() {
-        this.props.getItems();
+        this.props.getProducts();
     }
 
     render() {
         let rowContents = [];
-		const contents = this.props.items.reduce((total, currentValue, i) => {
+		const contents = this.props.products.reduce((total, currentValue, i) => {
             rowContents.push(
                 <div className="col-md-3 row product-wrap" key={i}>
                     <div className="col-xs-12 col-md-12 text-center product-container">
@@ -51,14 +51,14 @@ class ProductsList extends Component {
 
 function mapStateToProps(state) {
     return {
-        items: state.items.items,
+        products: state.products.products,
         totalQty: state.cart.totalQty
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        getItems
+        getProducts
     }, dispatch);
 }
 
