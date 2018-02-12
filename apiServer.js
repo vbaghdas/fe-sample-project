@@ -78,6 +78,7 @@ app.delete('/products/:_id', function(req, res) {
   var query = {_id: req.params._id}
   Products.remove(query, function(err, products) {
       if(err) {
+        console.log('# API DELETE PRODUCTS', err);
       }
       res.json(products);
   })

@@ -249,17 +249,11 @@ h3 {
 ===========================================================*/
 @media screen and (max-width: 991px){
     .product-wrap {
-        width: 50%;
+        width: 330px;
         margin: 30px auto;
     }
 
     .header {
         text-align: center;
-    }
-}
-
-@media screen and (max-width: 600px){
-    .product-wrap {
-        width: 75%;
     }
 }
