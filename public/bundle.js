@@ -29511,7 +29511,7 @@ var Navbar = function (_Component) {
                                 { className: 'shop' },
                                 _react2.default.createElement(
                                     _reactRouterDom.Link,
-                                    { to: '/' },
+                                    { to: '/', onClick: this.onCloseModal },
                                     'Shop'
                                 )
                             )

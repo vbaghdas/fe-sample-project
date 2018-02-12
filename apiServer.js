@@ -49,7 +49,6 @@ app.get('/cart', function(req, res) {
   }
 })
 
-
 var Products = require('./models/products.js');
 
 // <--- POST Products ---> //

@@ -51,7 +51,7 @@ class Navbar extends Component {
                     <div className="collapse navbar-collapse" id="navbar-list">
                         <ul className="nav navbar-nav">
                             <li className="shop">
-                                <Link to="/">Shop</Link>
+                                <Link to="/" onClick={this.onCloseModal}>Shop</Link>
                             </li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
