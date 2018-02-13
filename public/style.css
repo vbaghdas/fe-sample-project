@@ -257,3 +257,10 @@ h3 {
         text-align: center;
     }
 }
+
+@media screen and (max-width: 768px){
+    .Modal-overlay-0-1-1 {
+        background: rgba(255, 255, 255, 1)!important;
+        top: 50px!important;
+    }
+}
