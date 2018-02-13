@@ -277,14 +277,19 @@ body {
 }
 
 @media screen and (max-width: 768px){
+    .Modal-overlay-0-1-1 {
+        background: rgba(255, 255, 255, 1)!important;
+        top: 50px!important;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
     .product-container h3,
     .product-container h4,
     .btn-outline-primary {
         font-weight: 400;
-    }
-
-    .Modal-overlay-0-1-1 {
-        background: rgba(255, 255, 255, 1)!important;
-        top: 50px!important;
     }
 }
