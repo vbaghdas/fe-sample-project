@@ -29506,7 +29506,7 @@ var Navbar = function (_Component) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'collapse navbar-collapse', id: 'navbar-list', 'aria-expanded': open },
+                        { className: 'collapse navbar-collapse', id: 'navbar-list' },
                         _react2.default.createElement(
                             'ul',
                             { className: 'nav navbar-nav' },
