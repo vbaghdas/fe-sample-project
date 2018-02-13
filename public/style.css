@@ -268,7 +268,7 @@ body {
     
     .product-wrap {
         width: 330px;
-        margin: 30px auto;
+        margin: 30px auto 0;
     }
 
     .header {
