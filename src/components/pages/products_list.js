@@ -41,7 +41,7 @@ class ProductsList extends Component {
 		return (
             <section id="main" className="container">
                 <div className="row header-row">
-                    <h3 className="header">Shop our featured collection</h3>
+                    <h1 className="header">Shop our featured collection</h1>
                 </div>
                 {contents}
             </section>

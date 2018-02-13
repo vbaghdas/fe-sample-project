@@ -28304,7 +28304,7 @@ var ProductsList = function (_Component) {
                     'div',
                     { className: 'row header-row' },
                     _react2.default.createElement(
-                        'h3',
+                        'h1',
                         { className: 'header' },
                         'Shop our featured collection'
                     )
