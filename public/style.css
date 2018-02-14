@@ -1,6 +1,11 @@
 /*==========================================================
                         GLOBAL
 ===========================================================*/
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
 body {
     font-family: 'Lato', sans-serif;
     color: #4a4a4a;
@@ -13,9 +18,8 @@ body {
 
 .btn-outline-primary {
     padding: 5px 25px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     color: #4a4a4a;
-    font-weight: 300;
     background-color: transparent;
     background-image: none;
     border-color: #979797!important;
@@ -60,13 +64,8 @@ body {
     color: #fff;
 }
 
-.navbar-inverse .navbar-nav>.shop>a {
-    font-weight: 400;
-}
-
 .navbar-inverse .navbar-nav>li>a {
     line-height: 1.3;
-    font-weight: 400;
     font-size: 19px;
     color: #fff;
 }
@@ -134,25 +133,24 @@ body {
 }
 
 .product-wrap {
-    margin: 15px auto;
+    margin: auto;
+    padding: 10px;
 }
 
 .product-container {
     box-shadow: 0 0 5px 2px rgba(198,179,179, 0.4);
     border: solid 2px rgba(198,179,179, 0.8);
-    padding: 0 0 15px 0;
+    padding: 0;
 }
 
 .product-container h3 {
     font-size: 18px;
-    margin-top: 3px;
-    font-weight: 300;
+    margin: 0px 0 10px 0;
 }
 
 .product-container h4 {
     font-size: 16px;
-    margin-bottom: 0;
-    font-weight: 300;
+    margin: 0 0 3px 0;
 }
 
 .product-container:hover {
@@ -280,33 +278,5 @@ body {
     .Modal-overlay-0-1-1 {
         background: rgba(255, 255, 255, 1)!important;
         top: 50px!important;
-    }
-}
-
-/* ----------- iPhone 6+, 7+ and 8+ ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-    .product-container h3,
-    .product-container h4,
-    .btn-outline-primary {
-        font-weight: 400;
-    }
-}
-
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-    .product-container h3,
-    .product-container h4,
-    .btn-outline-primary {
-        font-weight: 400;
     }
 }
