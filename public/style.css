@@ -61,6 +61,8 @@ body {
 .navbar-inverse .navbar-brand {
     font-weight: 900;
     font-size: 22px;
+    height: 54px;
+    padding: 15px 10px;
     color: #fff;
 }
 
@@ -70,10 +72,6 @@ body {
     color: #fff;
 }
 
-.nav>li>a {
-    padding: 15px 5px;
-}
-
 .nav>li>a:hover {
     text-decoration: underline;
 }
@@ -81,7 +79,7 @@ body {
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: transparent;
     text-align: center;
-    padding: 0 30px;
+    padding: 0 10px;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -117,7 +115,7 @@ body {
                         HEADER
 ===========================================================*/
 .header {
-    margin: 20px 30px 10px;
+    margin: 25px 25px 15px;
 }
 
 .header-row h1 {
@@ -214,7 +212,7 @@ body {
 .cart-divider {
     border-width: 2px;
     border-top: 2px solid #4a4a4a;
-    margin-top: 0;
+    margin: 0;
 }
 
 .product-image-wrap {
@@ -260,13 +258,9 @@ body {
                     MOBILE RESPONSIVE
 ===========================================================*/
 @media screen and (max-width: 991px){
-    .header {
-        margin: 30px 30px 0px;
-    }
-    
     .product-wrap {
         width: 330px;
-        margin: 30px auto 0;
+        margin: 0 auto;
     }
 
     .header {
