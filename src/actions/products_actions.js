@@ -17,7 +17,7 @@ export function getProducts(){
 // POST A PRODUCT
 export function postProducts(product){
 	return function(dispatch){
-		axios.post("/api/products", book)
+		axios.post("/api/products", product)
 			.then(function(response){
 				dispatch({type:"POST_PRODUCT", payload:response.data})
 			})
